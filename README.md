@@ -1,0 +1,2 @@
+# Fundamentals_of_artificial_intelligence_in_Python_examples-book_by_Anatoly_Postolit
+ Artificial Intelligence Tutorial + Exercises
