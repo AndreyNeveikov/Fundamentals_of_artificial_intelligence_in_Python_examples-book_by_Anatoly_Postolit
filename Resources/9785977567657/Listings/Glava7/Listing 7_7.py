@@ -1,0 +1,20 @@
+# Listing 7.7
+# Модуль ImAi_7
+from imageai.Detection import ObjectDetection
+import os
+
+execution_path = os.getcwd()
+im_path = os.path.abspath('C:\\ImAi\\')  # путь к папке с рисунками
+
+detector = ObjectDetection()
+detector.setModelTypeAsYOLOv3()
+detector.setModelPath(os.path.join(execution_path, "yolo.h5"))
+detector.loadModel()
+detections = detector.detectCustomObjectsFromImage(input_image=os.path.join(im_path, "image_str.jpg"),
+                                                   output_image_path=os.path.join(im_path, "image_str_new.jpg"),
+                                                   minimum_percentage_probability=30)
+
+
+for eachObject in detections:
+    print(eachObject["name"], " : ", eachObject["percentage_probability"], " : ", eachObject["box_points"])
+    print("--------------------------------")
